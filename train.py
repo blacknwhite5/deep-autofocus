@@ -42,7 +42,7 @@ def setups(mode:dict) -> 'network, criterion, optimizer, dataloader':
 def load_model(net:'network', path:'path/pretrained/model') -> 'loads pretrained model':
     if os.path.isfile(path):
         net.load_state_dict(torch.load(path))
-        print('[!] {} parameters loaded'.format(net.__class__.__name__))
+        print('[*] {} parameters loaded'.format(net.__class__.__name__))
     return net
 
 
