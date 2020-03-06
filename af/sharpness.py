@@ -59,14 +59,6 @@ def correlation(img_name, crop_size=None):
     cor2 = np.sum(np.multiply(img3, img4, dtype=np.int32))
     return cor1-cor2
 
-def e2ntropy(img_name, crop_size=None):
-    img = cv2.imread(img_name,0)
-    if crop_size is not None:
-        img = _center_crop(img, crop_size)
-    ent_intensity = [int(pixel*math.log(pixel,2)) for row in img for pixel in row if int(pixel) is not 0]
-    ent_intensity = -sum(ent_intensity)
-    return ent_intensity 
-
 def entropy(img_name, crop_size=None):
     img = cv2.imread(img_name,0)
     if crop_size is not None:
