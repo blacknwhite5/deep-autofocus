@@ -3,11 +3,27 @@ This repository contains the code for the paper [Robust Autofocus Score Predicti
 presented at Microscopy & MicroAnalysis (M&M 2020).
 
 ## Table of Contents
+ * [Environment setting](#0-Environment-setting)
  * [Training a model](#1-Training-a-model)
  * [Validation](#2-Validation)
  * [Conventional algorithms](#3-Conventional-algorithms)
  * [Results](#4-Results)
  * [Citation](#5-Citation)
+ * [Reference](#6-Reference)
+
+### 0. Environment setting
+```
+#gpu
+CUDA                    10.0
+cudnn                   7.6.0
+
+#package
+pytorch                 1.1.0
+torchvision             0.3.0
+numpy                   1.16.4
+matplotlib              3.1.1
+pillow                  6.1.1
+```
 
 ### 1. Training a model 
 #### 1-1) Datasets
@@ -105,7 +121,7 @@ You can see our saved results in `results/`.
 ### 5. Citation
 
 ```
-@misc{deep-autofocus,
+@proceeding{deep-autofocus,
   title         = {Robust Autofocus Score Prediction of SEM on Magnification Based on Deep Learning System},
   author        = {Moohyun Oh, Jonggyu Jang, Hyun Jong Yang, Hyeonsu Lyu},
   journal       = {arXiv or google scalar, **NEED TO UPDATE LATER}
