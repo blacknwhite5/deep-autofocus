@@ -94,8 +94,8 @@ class Trainer:
 def main():
     # TODO: You must set the path of the datasets with cache.txt (new/old)
     # ----------------- here ------------------------------
-    new = '../../data/020620+021220/'
-    old = '../../data/dataset/'
+    new = '../data/020620+021220/'
+    old = '../data/dataset/'
     # -----------------------------------------------------
     mode = {'a':{'network':'resnet18', 'dataset':new, 'crop_size': (240, 320),'pretrained':'mnm2020_with_new'}, 
             'b':{'network':'resnet18', 'dataset':old, 'crop_size': (224, 224), 'pretrained':'mnm2020_with_old'}, 
@@ -106,7 +106,7 @@ def main():
     pretrained = os.path.join('./pretrained/', mode[sys.argv[1]]['pretrained'])
     model = Trainer(*setups(mode[sys.argv[1]]), netname)
 
-    print('{} Training Started'.format(mode['pretrained']))
+    print('{} Training Started'.format(mode[sys.argv[1]]['pretrained']))
     start = time.time()
     for epoch in range(100):
         model.learn()
